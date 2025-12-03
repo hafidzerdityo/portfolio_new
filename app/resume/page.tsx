@@ -30,9 +30,10 @@ const page = () => {
       type: "Full-time",
       link: "https://www.posindonesia.co.id/en",
       description: [
-        "(Junior) Developing backend for PosAjaUMKM using Go Fiber.",
-        "(Mid level) Developing backend for Pospay Mobile using Java Spring Boot.",
-        "(ad hoc Project) Developed and deployed multiple computer vision models using PyTorch + FastAPI.",
+        "Developing backend for PosAjaUMKM using Go Fiber.",
+        "Developing backend for Pos Giro Cash using Nest.js.",
+        "Developing backend for Pospay Mobile using Java Spring Boot.",
+        "Developed and deployed multiple computer vision models using PyTorch + FastAPI.",
       ],
     },
     {
