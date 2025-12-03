@@ -10,6 +10,7 @@ import {
   SendHorizontal,
   ChevronRight,
   User,
+  ArrowUpRight,
 } from "lucide-react";
 
 import Image from "next/image";
@@ -24,7 +25,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -39,7 +39,7 @@ const techStackList = [
 ];
 
 const stats = [
-  { icon: Clock, value: "4+", title: "Years of Experience" },
+  { icon: Clock, value: "4+", title: "Years Exp." },
   { icon: Code, value: "7+", title: "Projects" },
   { icon: Briefcase, value: "3", title: "Companies" },
 ];
@@ -72,67 +72,53 @@ const page = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-20 pb-16">
-      <div className="max-w-4xl mx-auto px-4 space-y-12">
-        <Card className="shadow-md rounded-xl p-6 bg-card">
-          <CardHeader className="p-0 mb-2">
-            <div className="flex items-center gap-4">
-              <User className="w-10 h-10 text-primary" />
-              <div>
-                <CardTitle className="text-2xl font-bold">
-                  Muhammad Hafidz Erdityo
-                </CardTitle>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  <Badge
-                    variant="default"
-                    className="bg-primary/10 text-primary"
-                  >
-                    Software Engineer
-                  </Badge>
-                  <Badge variant="secondary">Backend</Badge>
-                  <Badge variant="outline">🇮🇩 Indonesia</Badge>
-                </div>
-              </div>
-            </div>
-          </CardHeader>
-
-          <CardContent className="p-0">
-            <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-              I'm a Software Engineer with {stats[0].value} years of specialized
-              experience in Backend Engineering, building microservices for
-              fintech applications including sharia-compliant banking systems
-              for major institutions like Bank BCA Syariah, Bank BJB Syariah,
-              and other app such as Pospay Superapp and PosAjaUMKM.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* STATS */}
-        <div className="grid grid-cols-3 gap-4">
-          {stats.map((s, idx) => (
-            <Card
-              key={idx}
-              className="text-center transition-all shadow-sm hover:shadow-md rounded-lg"
-            >
-              <CardContent className="p-4 flex flex-col items-center">
-                <s.icon className="w-5 h-5 text-primary mb-2" />
-                <div className="text-2xl font-bold">{s.value}</div>
-                <div className="text-xs uppercase text-muted-foreground">
-                  {s.title}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* EXPERTISE + STACK */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Expertise */}
+    <div className="min-h-screen bg-background pt-24 pb-20">
+      <div className="max-w-4xl mx-auto px-6 space-y-24">
+        
+        {/* HERO SECTION */}
+        <section className="space-y-8">
           <div className="space-y-4">
-            <h2 className="text-xl font-semibold border-b pb-2">
-              Core Expertise
-            </h2>
-            <ul className="space-y-3">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+              Muhammad Hafidz Erdityo
+            </h1>
+            <div className="flex flex-wrap gap-3">
+              <Badge variant="secondary" className="px-3 py-1 text-sm font-medium">
+                Software Engineer
+              </Badge>
+              <Badge variant="outline" className="px-3 py-1 text-sm font-medium">
+                Backend Specialist
+              </Badge>
+              <Badge variant="outline" className="px-3 py-1 text-sm font-medium">
+                🇮🇩 Indonesia
+              </Badge>
+            </div>
+          </div>
+
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            I build resilient microservices and high-performance backend systems. 
+            Specializing in fintech and sharia-compliant banking solutions for major institutions.
+          </p>
+
+          <div className="flex items-center gap-12 pt-4">
+            {stats.map((s, idx) => (
+              <div key={idx} className="flex flex-col">
+                <span className="text-3xl font-bold text-foreground">{s.value}</span>
+                <span className="text-sm text-muted-foreground font-medium uppercase tracking-wider">
+                  {s.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <Separator />
+
+        {/* EXPERTISE & STACK */}
+        <section className="grid md:grid-cols-2 gap-16">
+          {/* Expertise */}
+          <div className="space-y-8">
+            <h2 className="text-2xl font-semibold tracking-tight">Core Expertise</h2>
+            <ul className="space-y-6">
               {[
                 {
                   title: "Banking & Finance",
@@ -147,49 +133,49 @@ const page = () => {
                   desc: "FastAPI, Go Fiber, Spring Boot, and async architecture.",
                 },
               ].map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-sm">
-                  <ChevronRight className="w-4 h-4 text-primary mt-0.5" />
-                  <div>
-                    <span className="font-semibold">{item.title}:</span>{" "}
+                <li key={idx} className="group">
+                  <h3 className="font-medium text-foreground flex items-center gap-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground mt-1 text-sm leading-relaxed">
                     {item.desc}
-                  </div>
+                  </p>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Tech Stack */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold border-b pb-2">
-              Key Tech Stack
-            </h2>
-            <div className="grid gap-2">
+          <div className="space-y-8">
+            <h2 className="text-2xl font-semibold tracking-tight">Tech Stack</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {techStackList.map((tech, idx) => (
-                <Card key={idx} className="p-3 shadow-sm hover:shadow-md">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`p-2 rounded-lg text-white ${tech.color} flex items-center justify-center`}
-                    >
-                      <FontAwesomeIcon icon={tech.icon} className="w-5 h-5" />
-                    </div>
-                    <span className="text-sm font-medium">{tech.name}</span>
+                <div 
+                  key={idx} 
+                  className="flex items-center gap-3 p-3 rounded-lg border border-transparent hover:border-border hover:bg-secondary/30 transition-all"
+                >
+                  <div className={`w-8 h-8 rounded-md flex items-center justify-center text-white ${tech.color} shrink-0`}>
+                    <FontAwesomeIcon icon={tech.icon} className="w-4 h-4" />
                   </div>
-                </Card>
+                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground">
+                    {tech.name}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
-        </div>
+        </section>
 
         <Separator />
 
         {/* CLIENTS */}
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold">Notable Clients & Projects</h2>
-          <div className="grid sm:grid-cols-2 gap-4">
+        <section className="space-y-10">
+          <h2 className="text-2xl font-semibold tracking-tight">Notable Clients & Projects</h2>
+          <div className="grid md:grid-cols-2 gap-8">
             {clients.map((client, idx) => (
-              <Card key={idx} className="rounded-xl shadow-md overflow-hidden">
-                <CardContent className="p-4 space-y-3">
-                  <div className="flex items-center gap-3 border-b pb-2">
+              <div key={idx} className="group space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="p-2 bg-white rounded-lg border w-fit">
                     <Image
                       src={client.logoUrl}
                       alt={client.name}
@@ -197,49 +183,57 @@ const page = () => {
                       height={40}
                       className="w-20 h-10 object-contain"
                     />
-                    <h3 className="font-semibold">{client.name}</h3>
                   </div>
+                  <h3 className="font-semibold text-lg">{client.name}</h3>
+                </div>
 
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {client.projects.map((proj, i) => (
-                      <li key={i} className="flex items-center gap-1">
-                        <ChevronRight className="w-3 h-3 text-primary" />
-                        {proj}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+                <ul className="space-y-2 pl-1">
+                  {client.projects.map((proj, i) => (
+                    <li key={i} className="flex items-center gap-2 text-muted-foreground text-sm">
+                      <div className="w-1 h-1 rounded-full bg-primary/50" />
+                      {proj}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </section>
 
         {/* CONTACT */}
-        <section className="space-y-4">
-          <h2 className="text-xl font-semibold">Get in Touch</h2>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild variant="outline" className="w-full sm:w-auto">
-              <a href="https://t.me/hafidzerdityo" target="_blank">
-                <SendHorizontal className="w-4 h-4 mr-2" />
-                Telegram
-              </a>
-            </Button>
+        <section className="pt-8 pb-8">
+          <div className="bg-secondary/30 rounded-2xl p-8 md:p-12 text-center space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold">Let's work together</h2>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              Interested in building scalable backend systems? Reach out and let's discuss your next project.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+              <Button asChild size="lg" className="gap-2">
+                <a href="https://t.me/hafidzerdityo" target="_blank">
+                  <SendHorizontal className="w-4 h-4" />
+                  Telegram
+                </a>
+              </Button>
 
-            <Button
-              onClick={handleCopyEmail}
-              variant={copied ? "default" : "outline"}
-              className="w-full sm:w-auto cursor-pointer"
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              {email}
-              {copied ? (
-                <Badge className="ml-2 bg-white text-secondary">Copied!</Badge>
-              ) : (
-                <Copy className="w-3 h-3 ml-2 text-muted-foreground" />
-              )}
-            </Button>
+              <Button
+                onClick={handleCopyEmail}
+                variant="outline"
+                size="lg"
+                className="gap-2"
+              >
+                <Mail className="w-4 h-4" />
+                {email}
+                {copied ? (
+                  <Check className="w-4 h-4 text-green-500" />
+                ) : (
+                  <Copy className="w-4 h-4 text-muted-foreground" />
+                )}
+              </Button>
+            </div>
           </div>
         </section>
+
       </div>
     </div>
   );

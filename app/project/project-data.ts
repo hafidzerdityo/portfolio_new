@@ -4,6 +4,7 @@ import {
   faAws,
   faGolang,
   faJava,
+  faNode
 } from "@fortawesome/free-brands-svg-icons";
 
 export type ProjectTag = {
@@ -60,6 +61,23 @@ export const projectList: ProjectItem[] = [
     is_private: false,
   },
   {
+    id: 91,
+    thumbnail: "./static/listprojects/pos_giro_cash.png",
+    year: "2023",
+    name: "PosGiro Cash",
+    key: "pos_giro_cash",
+    title: "PosGiro Cash Backend",
+    link: null,
+    date: "March 2023",
+    desc: "Built scalable backend API systems for PosGiro Cash, a welfare cash management system. Developed with Nest.js, implemented RESTful endpoints, and containerized services with Docker for smooth deployment and maintenance, improving operational efficiency.",
+    tag: [
+      { name: "Node.js", icon: faNode },
+      { name: "Nest.js", icon: null },
+      { name: "Docker", icon: null },
+    ],
+    is_private: false,
+  },
+  {
     id: 2,
     thumbnail: "./static/listprojects/posaja_umkm.png",
     year: "2024",
@@ -79,12 +97,12 @@ export const projectList: ProjectItem[] = [
   {
     id: 3,
     thumbnail: "./static/listprojects/bjbs_ifos.png",
-    year: "2024",
+    year: "2021",
     name: "BJB Syariah - IFOS",
     key: "bjbs_ifos",
     title: "Integrated Financing Originating System",
     link: null,
-    date: "May 2024",
+    date: "May 2021",
     desc: "Developed backend APIs for BJBS Financing app, supporting Murabahah, Qardh, Musyarakah, and Ijarah operations. Built with Python FastAPI, implemented robust authentication and authorization, and ensured high reliability for financial transactions in compliance with Islamic finance principles.",
     tag: [
       { name: "Python", icon: faPython },
@@ -96,12 +114,12 @@ export const projectList: ProjectItem[] = [
   {
     id: 4,
     thumbnail: "./static/listprojects/bjbs_bds.png",
-    year: "2024",
+    year: "2021",
     name: "BJB Syariah - BDS & CBS",
     key: "bjbs_bds",
     title: "Branch Delivery & Core Banking System",
     link: null,
-    date: "January 2024",
+    date: "January 2021",
     desc: "Developed microservices architecture for BDS & CBS, enabling seamless branch operations and banking workflows. Utilized Python FastAPI for backend services, integrated Docker for containerized deployments, and optimized database interactions for high throughput and reliability.",
     tag: [
       { name: "Python", icon: faPython },
@@ -113,12 +131,12 @@ export const projectList: ProjectItem[] = [
   {
     id: 5,
     thumbnail: "./static/listprojects/bjbs_mobile.png",
-    year: "2024",
+    year: "2021",
     name: "BJB Syariah - Mobile API",
     key: "bjbs_mobile",
     title: "Mobile Banking API",
     link: null,
-    date: "January 2024",
+    date: "January 2021",
     desc: "Implemented backend API infrastructure for BJB Syariah mobile banking app, handling secure transactions, user authentication, and account management. Built with Python FastAPI and Docker, ensuring performance, scalability, and compliance with banking standards.",
     tag: [
       { name: "Python", icon: faPython },
@@ -130,12 +148,12 @@ export const projectList: ProjectItem[] = [
   {
     id: 6,
     thumbnail: "./static/listprojects/bcas_bds.png",
-    year: "2023",
+    year: "2022",
     name: "BCA Syariah - BDS & CBS",
     key: "bcas_bds",
     title: "Branch Delivery & Core Banking System",
     link: null,
-    date: "April 2023",
+    date: "April 2022",
     desc: "Developed backend microservices for BCA Syariah's BDS & CBS, using Go and gRPC to handle branch delivery and core banking operations. Optimized for low-latency communication and high reliability, providing a robust foundation for banking transactions and service integrations.",
     tag: [
       { name: "Go", icon: faGolang },
