@@ -34,7 +34,7 @@ const techStackList = [
   { name: "Python • FastAPI", icon: faPython, color: "bg-neutral-800" },
   { name: "Java • Spring Boot", icon: faJava, color: "bg-neutral-800" },
   { name: "Javascript • Next.js", icon: faReact, color: "bg-neutral-800" },
-  { name: "Javascript • Node.js", icon: faReact, color: "bg-neutral-800" },
+  { name: "Javascript • Node.js", icon: faNode, color: "bg-neutral-800" },
   { name: "Amazon Web Service", icon: faAws, color: "bg-neutral-800" },
 ];
 
